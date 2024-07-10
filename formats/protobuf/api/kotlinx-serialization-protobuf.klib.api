@@ -45,7 +45,6 @@ open annotation class kotlinx.serialization.protobuf/ProtoType : kotlin/Annotati
         final fun <get-type>(): kotlinx.serialization.protobuf/ProtoIntegerType // kotlinx.serialization.protobuf/ProtoType.type.<get-type>|<get-type>(){}[0]
 }
 sealed class kotlinx.serialization.protobuf/ProtoBuf : kotlinx.serialization/BinaryFormat { // kotlinx.serialization.protobuf/ProtoBuf|null[0]
-    constructor <init>(kotlin/Boolean, kotlinx.serialization.modules/SerializersModule) // kotlinx.serialization.protobuf/ProtoBuf.<init>|<init>(kotlin.Boolean;kotlinx.serialization.modules.SerializersModule){}[0]
     final object Default : kotlinx.serialization.protobuf/ProtoBuf // kotlinx.serialization.protobuf/ProtoBuf.Default|null[0]
     open fun <#A1: kotlin/Any?> decodeFromByteArray(kotlinx.serialization/DeserializationStrategy<#A1>, kotlin/ByteArray): #A1 // kotlinx.serialization.protobuf/ProtoBuf.decodeFromByteArray|decodeFromByteArray(kotlinx.serialization.DeserializationStrategy<0:0>;kotlin.ByteArray){0§<kotlin.Any?>}[0]
     open fun <#A1: kotlin/Any?> encodeToByteArray(kotlinx.serialization/SerializationStrategy<#A1>, #A1): kotlin/ByteArray // kotlinx.serialization.protobuf/ProtoBuf.encodeToByteArray|encodeToByteArray(kotlinx.serialization.SerializationStrategy<0:0>;0:0){0§<kotlin.Any?>}[0]

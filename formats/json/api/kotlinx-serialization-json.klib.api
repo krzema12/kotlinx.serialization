@@ -357,7 +357,6 @@ open annotation class kotlinx.serialization.json/JsonNames : kotlin/Annotation {
         final fun <get-names>(): kotlin/Array<out kotlin/String> // kotlinx.serialization.json/JsonNames.names.<get-names>|<get-names>(){}[0]
 }
 sealed class kotlinx.serialization.json/Json : kotlinx.serialization/StringFormat { // kotlinx.serialization.json/Json|null[0]
-    constructor <init>(kotlinx.serialization.json/JsonConfiguration, kotlinx.serialization.modules/SerializersModule) // kotlinx.serialization.json/Json.<init>|<init>(kotlinx.serialization.json.JsonConfiguration;kotlinx.serialization.modules.SerializersModule){}[0]
     final fun <#A1: kotlin/Any?> decodeFromJsonElement(kotlinx.serialization/DeserializationStrategy<#A1>, kotlinx.serialization.json/JsonElement): #A1 // kotlinx.serialization.json/Json.decodeFromJsonElement|decodeFromJsonElement(kotlinx.serialization.DeserializationStrategy<0:0>;kotlinx.serialization.json.JsonElement){0§<kotlin.Any?>}[0]
     final fun <#A1: kotlin/Any?> decodeFromString(kotlinx.serialization/DeserializationStrategy<#A1>, kotlin/String): #A1 // kotlinx.serialization.json/Json.decodeFromString|decodeFromString(kotlinx.serialization.DeserializationStrategy<0:0>;kotlin.String){0§<kotlin.Any?>}[0]
     final fun <#A1: kotlin/Any?> encodeToJsonElement(kotlinx.serialization/SerializationStrategy<#A1>, #A1): kotlinx.serialization.json/JsonElement // kotlinx.serialization.json/Json.encodeToJsonElement|encodeToJsonElement(kotlinx.serialization.SerializationStrategy<0:0>;0:0){0§<kotlin.Any?>}[0]
@@ -371,7 +370,6 @@ sealed class kotlinx.serialization.json/Json : kotlinx.serialization/StringForma
         open fun <get-serializersModule>(): kotlinx.serialization.modules/SerializersModule // kotlinx.serialization.json/Json.serializersModule.<get-serializersModule>|<get-serializersModule>(){}[0]
 }
 sealed class kotlinx.serialization.json/JsonElement { // kotlinx.serialization.json/JsonElement|null[0]
-    constructor <init>() // kotlinx.serialization.json/JsonElement.<init>|<init>(){}[0]
     final object Companion { // kotlinx.serialization.json/JsonElement.Companion|null[0]
         final fun serializer(): kotlinx.serialization/KSerializer<kotlinx.serialization.json/JsonElement> // kotlinx.serialization.json/JsonElement.Companion.serializer|serializer(){}[0]
     }
@@ -381,7 +379,6 @@ sealed class kotlinx.serialization.json/JsonPrimitive : kotlinx.serialization.js
         abstract fun <get-content>(): kotlin/String // kotlinx.serialization.json/JsonPrimitive.content.<get-content>|<get-content>(){}[0]
     abstract val isString // kotlinx.serialization.json/JsonPrimitive.isString|{}isString[0]
         abstract fun <get-isString>(): kotlin/Boolean // kotlinx.serialization.json/JsonPrimitive.isString.<get-isString>|<get-isString>(){}[0]
-    constructor <init>() // kotlinx.serialization.json/JsonPrimitive.<init>|<init>(){}[0]
     final object Companion { // kotlinx.serialization.json/JsonPrimitive.Companion|null[0]
         final fun serializer(): kotlinx.serialization/KSerializer<kotlinx.serialization.json/JsonPrimitive> // kotlinx.serialization.json/JsonPrimitive.Companion.serializer|serializer(){}[0]
     }

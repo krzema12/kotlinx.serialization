@@ -534,6 +534,7 @@ final class kotlinx.serialization/UnknownFieldException : kotlinx.serialization/
     constructor <init>(kotlin/Int) // kotlinx.serialization/UnknownFieldException.<init>|<init>(kotlin.Int){}[0]
 }
 final fun (kotlin.time/Duration.Companion).kotlinx.serialization.builtins/serializer(): kotlinx.serialization/KSerializer<kotlin.time/Duration> // kotlinx.serialization.builtins/serializer|serializer@kotlin.time.Duration.Companion(){}[0]
+final fun (kotlin.uuid/Uuid.Companion).kotlinx.serialization.builtins/serializer(): kotlinx.serialization/KSerializer<kotlin.uuid/Uuid> // kotlinx.serialization.builtins/serializer|serializer@kotlin.uuid.Uuid.Companion(){}[0]
 final fun (kotlin/Boolean.Companion).kotlinx.serialization.builtins/serializer(): kotlinx.serialization/KSerializer<kotlin/Boolean> // kotlinx.serialization.builtins/serializer|serializer@kotlin.Boolean.Companion(){}[0]
 final fun (kotlin/Byte.Companion).kotlinx.serialization.builtins/serializer(): kotlinx.serialization/KSerializer<kotlin/Byte> // kotlinx.serialization.builtins/serializer|serializer@kotlin.Byte.Companion(){}[0]
 final fun (kotlin/Char.Companion).kotlinx.serialization.builtins/serializer(): kotlinx.serialization/KSerializer<kotlin/Char> // kotlinx.serialization.builtins/serializer|serializer@kotlin.Char.Companion(){}[0]
@@ -747,6 +748,12 @@ final object kotlinx.serialization.internal/UnitSerializer : kotlinx.serializati
     final val descriptor // kotlinx.serialization.internal/UnitSerializer.descriptor|{}descriptor[0]
         final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // kotlinx.serialization.internal/UnitSerializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
 }
+final object kotlinx.serialization.internal/UuidSerializer : kotlinx.serialization/KSerializer<kotlin.uuid/Uuid> { // kotlinx.serialization.internal/UuidSerializer|null[0]
+    final fun deserialize(kotlinx.serialization.encoding/Decoder): kotlin.uuid/Uuid // kotlinx.serialization.internal/UuidSerializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+    final fun serialize(kotlinx.serialization.encoding/Encoder, kotlin.uuid/Uuid) // kotlinx.serialization.internal/UuidSerializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;kotlin.uuid.Uuid){}[0]
+    final val descriptor // kotlinx.serialization.internal/UuidSerializer.descriptor|{}descriptor[0]
+        final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // kotlinx.serialization.internal/UuidSerializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+}
 final val kotlinx.serialization.builtins/nullable // kotlinx.serialization.builtins/nullable|@kotlinx.serialization.KSerializer<0:0>{0§<kotlin.Any>}nullable[0]
     final fun <#A1: kotlin/Any> (kotlinx.serialization/KSerializer<#A1>).<get-nullable>(): kotlinx.serialization/KSerializer<#A1?> // kotlinx.serialization.builtins/nullable.<get-nullable>|<get-nullable>@kotlinx.serialization.KSerializer<0:0>(){0§<kotlin.Any>}[0]
 final val kotlinx.serialization.descriptors/capturedKClass // kotlinx.serialization.descriptors/capturedKClass|@kotlinx.serialization.descriptors.SerialDescriptor{}capturedKClass[0]
@@ -871,7 +878,6 @@ sealed class <#A: kotlin/Any?, #B: kotlin/Any?, #C: kotlin/Any?, #D: kotlin.coll
     abstract fun (#D).insertKeyValuePair(kotlin/Int, #A, #B) // kotlinx.serialization.internal/MapLikeSerializer.insertKeyValuePair|insertKeyValuePair@1:3(kotlin.Int;1:0;1:1){}[0]
     abstract val descriptor // kotlinx.serialization.internal/MapLikeSerializer.descriptor|{}descriptor[0]
         abstract fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // kotlinx.serialization.internal/MapLikeSerializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
-    constructor <init>(kotlinx.serialization/KSerializer<#A>, kotlinx.serialization/KSerializer<#B>) // kotlinx.serialization.internal/MapLikeSerializer.<init>|<init>(kotlinx.serialization.KSerializer<1:0>;kotlinx.serialization.KSerializer<1:1>){}[0]
     final fun readAll(kotlinx.serialization.encoding/CompositeDecoder, #D, kotlin/Int, kotlin/Int) // kotlinx.serialization.internal/MapLikeSerializer.readAll|readAll(kotlinx.serialization.encoding.CompositeDecoder;1:3;kotlin.Int;kotlin.Int){}[0]
     final fun readElement(kotlinx.serialization.encoding/CompositeDecoder, kotlin/Int, #D, kotlin/Boolean) // kotlinx.serialization.internal/MapLikeSerializer.readElement|readElement(kotlinx.serialization.encoding.CompositeDecoder;kotlin.Int;1:3;kotlin.Boolean){}[0]
     final val keySerializer // kotlinx.serialization.internal/MapLikeSerializer.keySerializer|{}keySerializer[0]
@@ -891,7 +897,6 @@ sealed class <#A: kotlin/Any?, #B: kotlin/Any?, #C: kotlin/Any?> kotlinx.seriali
     abstract fun readAll(kotlinx.serialization.encoding/CompositeDecoder, #C, kotlin/Int, kotlin/Int) // kotlinx.serialization.internal/AbstractCollectionSerializer.readAll|readAll(kotlinx.serialization.encoding.CompositeDecoder;1:2;kotlin.Int;kotlin.Int){}[0]
     abstract fun readElement(kotlinx.serialization.encoding/CompositeDecoder, kotlin/Int, #C, kotlin/Boolean = ...) // kotlinx.serialization.internal/AbstractCollectionSerializer.readElement|readElement(kotlinx.serialization.encoding.CompositeDecoder;kotlin.Int;1:2;kotlin.Boolean){}[0]
     abstract fun serialize(kotlinx.serialization.encoding/Encoder, #B) // kotlinx.serialization.internal/AbstractCollectionSerializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;1:1){}[0]
-    constructor <init>() // kotlinx.serialization.internal/AbstractCollectionSerializer.<init>|<init>(){}[0]
     final fun merge(kotlinx.serialization.encoding/Decoder, #B?): #B // kotlinx.serialization.internal/AbstractCollectionSerializer.merge|merge(kotlinx.serialization.encoding.Decoder;1:1?){}[0]
     open fun deserialize(kotlinx.serialization.encoding/Decoder): #B // kotlinx.serialization.internal/AbstractCollectionSerializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
 }
@@ -899,7 +904,6 @@ sealed class <#A: kotlin/Any?, #B: kotlin/Any?, #C: kotlin/Any?> kotlinx.seriali
     abstract fun (#C).insert(kotlin/Int, #A) // kotlinx.serialization.internal/CollectionLikeSerializer.insert|insert@1:2(kotlin.Int;1:0){}[0]
     abstract val descriptor // kotlinx.serialization.internal/CollectionLikeSerializer.descriptor|{}descriptor[0]
         abstract fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // kotlinx.serialization.internal/CollectionLikeSerializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
-    constructor <init>(kotlinx.serialization/KSerializer<#A>) // kotlinx.serialization.internal/CollectionLikeSerializer.<init>|<init>(kotlinx.serialization.KSerializer<1:0>){}[0]
     final fun readAll(kotlinx.serialization.encoding/CompositeDecoder, #C, kotlin/Int, kotlin/Int) // kotlinx.serialization.internal/CollectionLikeSerializer.readAll|readAll(kotlinx.serialization.encoding.CompositeDecoder;1:2;kotlin.Int;kotlin.Int){}[0]
     open fun readElement(kotlinx.serialization.encoding/CompositeDecoder, kotlin/Int, #C, kotlin/Boolean) // kotlinx.serialization.internal/CollectionLikeSerializer.readElement|readElement(kotlinx.serialization.encoding.CompositeDecoder;kotlin.Int;1:2;kotlin.Boolean){}[0]
     open fun serialize(kotlinx.serialization.encoding/Encoder, #B) // kotlinx.serialization.internal/CollectionLikeSerializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;1:1){}[0]
@@ -910,7 +914,6 @@ sealed class <#A: kotlin/Any?, #B: kotlin/Any?, #C: kotlin/Any?> kotlinx.seriali
         abstract fun (#C).<get-key>(): #A // kotlinx.serialization.internal/KeyValueSerializer.key.<get-key>|<get-key>@1:2(){}[0]
     abstract val value // kotlinx.serialization.internal/KeyValueSerializer.value|@1:2{}value[0]
         abstract fun (#C).<get-value>(): #B // kotlinx.serialization.internal/KeyValueSerializer.value.<get-value>|<get-value>@1:2(){}[0]
-    constructor <init>(kotlinx.serialization/KSerializer<#A>, kotlinx.serialization/KSerializer<#B>) // kotlinx.serialization.internal/KeyValueSerializer.<init>|<init>(kotlinx.serialization.KSerializer<1:0>;kotlinx.serialization.KSerializer<1:1>){}[0]
     final val keySerializer // kotlinx.serialization.internal/KeyValueSerializer.keySerializer|{}keySerializer[0]
         final fun <get-keySerializer>(): kotlinx.serialization/KSerializer<#A> // kotlinx.serialization.internal/KeyValueSerializer.keySerializer.<get-keySerializer>|<get-keySerializer>(){}[0]
     final val valueSerializer // kotlinx.serialization.internal/KeyValueSerializer.valueSerializer|{}valueSerializer[0]
@@ -919,12 +922,10 @@ sealed class <#A: kotlin/Any?, #B: kotlin/Any?, #C: kotlin/Any?> kotlinx.seriali
     open fun serialize(kotlinx.serialization.encoding/Encoder, #C) // kotlinx.serialization.internal/KeyValueSerializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;1:2){}[0]
 }
 sealed class kotlinx.serialization.descriptors/PolymorphicKind : kotlinx.serialization.descriptors/SerialKind { // kotlinx.serialization.descriptors/PolymorphicKind|null[0]
-    constructor <init>() // kotlinx.serialization.descriptors/PolymorphicKind.<init>|<init>(){}[0]
     final object OPEN : kotlinx.serialization.descriptors/PolymorphicKind // kotlinx.serialization.descriptors/PolymorphicKind.OPEN|null[0]
     final object SEALED : kotlinx.serialization.descriptors/PolymorphicKind // kotlinx.serialization.descriptors/PolymorphicKind.SEALED|null[0]
 }
 sealed class kotlinx.serialization.descriptors/PrimitiveKind : kotlinx.serialization.descriptors/SerialKind { // kotlinx.serialization.descriptors/PrimitiveKind|null[0]
-    constructor <init>() // kotlinx.serialization.descriptors/PrimitiveKind.<init>|<init>(){}[0]
     final object BOOLEAN : kotlinx.serialization.descriptors/PrimitiveKind // kotlinx.serialization.descriptors/PrimitiveKind.BOOLEAN|null[0]
     final object BYTE : kotlinx.serialization.descriptors/PrimitiveKind // kotlinx.serialization.descriptors/PrimitiveKind.BYTE|null[0]
     final object CHAR : kotlinx.serialization.descriptors/PrimitiveKind // kotlinx.serialization.descriptors/PrimitiveKind.CHAR|null[0]
@@ -936,14 +937,12 @@ sealed class kotlinx.serialization.descriptors/PrimitiveKind : kotlinx.serializa
     final object STRING : kotlinx.serialization.descriptors/PrimitiveKind // kotlinx.serialization.descriptors/PrimitiveKind.STRING|null[0]
 }
 sealed class kotlinx.serialization.descriptors/SerialKind { // kotlinx.serialization.descriptors/SerialKind|null[0]
-    constructor <init>() // kotlinx.serialization.descriptors/SerialKind.<init>|<init>(){}[0]
     final object CONTEXTUAL : kotlinx.serialization.descriptors/SerialKind // kotlinx.serialization.descriptors/SerialKind.CONTEXTUAL|null[0]
     final object ENUM : kotlinx.serialization.descriptors/SerialKind // kotlinx.serialization.descriptors/SerialKind.ENUM|null[0]
     open fun hashCode(): kotlin/Int // kotlinx.serialization.descriptors/SerialKind.hashCode|hashCode(){}[0]
     open fun toString(): kotlin/String // kotlinx.serialization.descriptors/SerialKind.toString|toString(){}[0]
 }
 sealed class kotlinx.serialization.descriptors/StructureKind : kotlinx.serialization.descriptors/SerialKind { // kotlinx.serialization.descriptors/StructureKind|null[0]
-    constructor <init>() // kotlinx.serialization.descriptors/StructureKind.<init>|<init>(){}[0]
     final object CLASS : kotlinx.serialization.descriptors/StructureKind // kotlinx.serialization.descriptors/StructureKind.CLASS|null[0]
     final object LIST : kotlinx.serialization.descriptors/StructureKind // kotlinx.serialization.descriptors/StructureKind.LIST|null[0]
     final object MAP : kotlinx.serialization.descriptors/StructureKind // kotlinx.serialization.descriptors/StructureKind.MAP|null[0]
@@ -954,7 +953,6 @@ sealed class kotlinx.serialization.modules/SerializersModule { // kotlinx.serial
     abstract fun <#A1: kotlin/Any> getPolymorphic(kotlin.reflect/KClass<in #A1>, #A1): kotlinx.serialization/SerializationStrategy<#A1>? // kotlinx.serialization.modules/SerializersModule.getPolymorphic|getPolymorphic(kotlin.reflect.KClass<in|0:0>;0:0){0§<kotlin.Any>}[0]
     abstract fun <#A1: kotlin/Any> getPolymorphic(kotlin.reflect/KClass<in #A1>, kotlin/String?): kotlinx.serialization/DeserializationStrategy<#A1>? // kotlinx.serialization.modules/SerializersModule.getPolymorphic|getPolymorphic(kotlin.reflect.KClass<in|0:0>;kotlin.String?){0§<kotlin.Any>}[0]
     abstract fun dumpTo(kotlinx.serialization.modules/SerializersModuleCollector) // kotlinx.serialization.modules/SerializersModule.dumpTo|dumpTo(kotlinx.serialization.modules.SerializersModuleCollector){}[0]
-    constructor <init>() // kotlinx.serialization.modules/SerializersModule.<init>|<init>(){}[0]
     final fun <#A1: kotlin/Any> getContextual(kotlin.reflect/KClass<#A1>): kotlinx.serialization/KSerializer<#A1>? // kotlinx.serialization.modules/SerializersModule.getContextual|getContextual(kotlin.reflect.KClass<0:0>){0§<kotlin.Any>}[0]
 }
 // Targets: [native, wasmJs, wasmWasi]
